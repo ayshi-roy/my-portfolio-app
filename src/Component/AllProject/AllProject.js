@@ -1,11 +1,14 @@
 import React from 'react';
 import project1 from '../../images/project1.png' ;
 import Capture from '../../images/Capture.PNG';
+import Capture2 from '../../images/Capture2.PNG';
 import screen2 from '../../images/screen2.png';
 import screen3 from '../../images/screen3.png';
 import Navbar from '../Navbar/Navbar';
 import Project from '../Project/Project';
 import './AllProject.css';
+import Particles from 'react-particles-js';
+
 
 const doctors = [
     {
@@ -32,22 +35,73 @@ const doctors = [
         github: "https://github.com/ayshi-roy/travel-guru-master",
         img: Capture
     },
+    {
+        name:'E-Commerce Website',
+        summery:"This is a responsive one page e-commerce website.In this project,there have a navbar,slider and some product collection like phone and leptop. ",
+        Technology:"To build this site I have used Html5,Css,bootstrap4 etc",
+        website: "https://ayshi-roy.github.io/My-first-E-commerce-site/",
+        github: "https://github.com/ayshi-roy/My-first-E-commerce-site",
+        img: Capture2
+    },
+    
 ]
 
 const AllProject = () => {
     return (
-        <div className="home-part col-12">            
-            <div className="">
-                <Navbar></Navbar> 
-            </div>
-            <div className="container">
-                <div className="row">
-                    {
-                        doctors.map(projects => <Project projects={projects}></Project> )
-                    }
+        <>
+        
+        <div className="" style={{ height: '310vh', background: '#111', position: 'relative' }}>
+                <div className="">
+                    <Navbar></Navbar> 
                 </div>
-            </div>
+                <Particles
+                style={{ height: '800vh' }}
+                params={{
+                    "particles": {
+                        "number": {
+                            "value": 360,
+                            "density": {
+                                "enable": false
+                            }
+                        },
+                        "size": {
+                            "value": 15,
+                            "random": true
+                        },
+                        "move": {
+                            "direction": "random",
+                            "out_mode": "out"
+                        },
+                        "line_linked": {
+                            "enable": false
+                        }
+                    },
+                    "interactivity": {
+                        "events": {
+                            "onclick": {
+                                "enable": true,
+                                "mode": "remove"
+                            }
+                        },
+                        "modes": {
+                            "remove": {
+                                "particles_nb": 20
+                            }
+                        }
+                    }
+                }} />
+                <div  style={{position: 'absolute',top: '0'}}>
+                    <div className="container">
+                        <div className="row">
+                            {
+                                doctors.map(projects => <Project projects={projects}></Project> )
+                            }
+                        </div>    
+                    </div>
+                </div>               
         </div>
+    
+    </>    
     );
 };
 

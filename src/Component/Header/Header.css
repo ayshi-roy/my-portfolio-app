@@ -4,6 +4,7 @@ a{
 }
 .navbar{
     height: var(--header-height);
+    background-image: linear-gradient(to right,#3F8CFC,#2AB5E7,#21C5DE,#11E4CD);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -116,7 +117,7 @@ a{
       margin-bottom: var(--mb-2);
   }
   .skills_text{
-      margin-bottom: var(--mb-4);
+      margin-bottom: var(--mb-1);
   }
   .skills_data{
        display: flex;
@@ -201,6 +202,7 @@ a{
     padding: .75rem 2.5rem;
     font-weight: var(--font-semi);
     border-radius: .5rem;
+    cursor: pointer;
   }
 
   /* === footer === */
